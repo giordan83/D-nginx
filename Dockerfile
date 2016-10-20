@@ -31,18 +31,13 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 RUN apt-get clean
 
-#ADD ${FILES}php-app.ini /etc/php5/fpm/conf.d/
-#ADD ${FILES}php-app.ini /etc/php5/cli/conf.d/
-#ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
-
 ADD ${FILES}nginx.conf /etc/nginx/nginx.conf
 
-#RUN rm -rf /etc/php5/fpm/pool.d/www.conf
 RUN usermod -u 1000 www-data
 
 ADD start.sh /start.sh
 
-# Configure executable to start php5-fpm.
+# Configure executable to start nginx.
 CMD ["/start.sh"]
 
 
