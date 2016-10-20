@@ -35,10 +35,10 @@ ADD ${FILES}nginx.conf /etc/nginx/nginx.conf
 
 RUN usermod -u 1000 www-data
 
-ADD start.sh /start.sh
+ADD start.sh /usr/local/bin/start.sh
 
 # Configure executable to start nginx.
-CMD ["/start.sh"]
+CMD ["start.sh"]
 
 
 # Expose ports.
