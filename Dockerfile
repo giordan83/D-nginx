@@ -47,4 +47,4 @@ CMD ["/start.sh"]
 
 
 # Expose ports.
-EXPOSE 9000
+EXPOSE 80 443
